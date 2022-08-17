@@ -1,0 +1,17 @@
+import pandas as pd
+winlit=pd.DataFrame()
+winlit["Successful"]=[41,10]
+winlit["Unsuccessful"]=[59,90]
+winlit
+
+winlit=winlit.rename(index={0:"Observed",1:"Expected"})
+winlit=winlit.T
+winlit
+
+winlit['d = Observed - Expected ']=winlit.loc[:,"Observed"] - winlit.loc[:,"Expected"] 
+winlit['d^2'] = winlit.loc[:,'d = Observed - Expected ']**2
+print(winlit)
+
+X=sum(winlit.loc[:,'d^2']/winlit.loc[:,"Expected"])
+print(X)
+print("We can reject the null hypothesis at 5% significance level")
