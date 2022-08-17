@@ -1,0 +1,7 @@
+import pandas as pd
+from pandas import DataFrame as df
+test=pd.read_csv("Desktop/test.csv")
+
+test['d =A.C - B.C']=test.loc[:,"After Course"] - test.loc[:,"Before Course"] 
+test['d^2'] = test.loc[:,'d =A.C - B.C']**2
+test
