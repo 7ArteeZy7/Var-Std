@@ -1,0 +1,17 @@
+import pandas as pd
+winlit=pd.DataFrame()
+winlit["Successful"]=[41,33]
+winlit["Unsuccessful"]=[59,67]
+winlit
+
+winlit=winlit.rename(index={0:"Observed",1:"Expected"})
+winlit=winlit.T
+winlit
+
+winlit['d = Observed - Expected ']=winlit.loc[:,"Observed"] - winlit.loc[:,"Expected"] 
+winlit['d^2'] = winlit.loc[:,'d = Observed - Expected ']**2
+print(winlit)
+
+X=sum(winlit.loc[:,'d^2']/winlit.loc[:,"Expected"])
+print(X)
+print("Significant at 10% but not at 5% for 1 Degree of Freedom \nThat is we can accept the null hypothesis at 5% but not at 10%")")
