@@ -1,0 +1,33 @@
+#Used the user defined function for std
+P=np.array([[2.,2,4],[1,1,2]])
+
+x=np.array([1,2,6])
+y=np.array([-1,1])
+
+def var1(P):
+    Px=sum(P,axis=0)
+    Py=sum(P,axis=1)
+
+    Ex = 0
+    for i in range(3):
+        Ex+=Px[i]*x[i]
+    Ey = 0
+    for i in range(2):
+        Ey+=Py[i]*y[i]
+
+    varx = 0
+    for i in range(3):
+        varx+=Px[i]*(x[i] - Ex)**2
+    stdx = sqrt(varx)
+
+    vary = 0
+    for i in range(2):
+        vary+=Py[i]*(y[i] - Ey)**2
+    stdy = sqrt(vary)
+    
+    return (varx,vary,stdx,stdy)
+
+def skew(P):
+    skewx=(3*(np.mean(x)-np.median(x))/var1(P)[2])
+    skewy=(3*(np.mean(y)-np.median(y))/var1(P)[3])
+    return(skewx,skewy)
