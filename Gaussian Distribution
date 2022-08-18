@@ -1,9 +1,12 @@
 import numpy as np
 import pandas as pd
 
-x=np.random.normal(size=(8,8))
+x=np.random.normal(50,5,size=100)
 x
 
-pd.DataFrame(x).to_csv('Normal Gaussian')
+pd.DataFrame(x).to_csv('Normal Gaussian',index=False)
 y=pd.read_csv('Normal Gaussian')
 y
+
+print("mean: ",np.mean(y))
+print("median: ",np.median(y))
