@@ -10,3 +10,24 @@ plt.plot(age_x,javadop,label="All Java ")
 plt.xlabel("Ages")
 plt.ylabel("Median Salary (USD)")
 plt.legend()
+
+
+
+#From normal distribution
+
+
+x1=np.random.normal(50,5,10)
+opx1=np.random.normal(3000,250,10)
+javax1=np.random.normal(4500,500,10)
+x1.sort()
+opx1.sort()
+javax1.sort()
+print(x1)
+print(opx1)
+print(javax1)
+
+plt.plot(x1,opx1,label="All devep")
+plt.plot(x1,javax1,label="All Java ")
+plt.xlabel("Ages")
+plt.ylabel("Median Salary (USD)")
+plt.legend()
