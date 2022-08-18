@@ -1,0 +1,9 @@
+import numpy as np
+import pandas as pd
+
+x=np.random.normal(size=(8,8))
+x
+
+pd.DataFrame(x).to_csv('Normal Gaussian')
+y=pd.read_csv('Normal Gaussian')
+y
